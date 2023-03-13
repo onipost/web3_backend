@@ -20,6 +20,7 @@
     "@types/ws": "^8.5.3",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8.19.0",
     "nodemon": "^2.0.20",
     "nodemon-webpack-plugin": "^4.8.1",

@@ -1,6 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const NodemonPlugin = require('nodemon-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = env => {
     return {
@@ -41,7 +42,8 @@ module.exports = env => {
                         NODE_ENV: env.mode,
                     },
                 }
-            )
+            ),
+            new Dotenv()
         ]
     }
 }
