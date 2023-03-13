@@ -1,7 +1,6 @@
 export interface BaseToken {
     readonly ticker: string,
     readonly title: string,
-    price: number,
     dailyChange: number
 }
 
