@@ -1,4 +1,5 @@
 import WebSocket from "ws"
+import { Spot } from "@binance/connector"
 
 export default class BinanceConnect {
     initConnection() {
@@ -14,3 +15,10 @@ export default class BinanceConnect {
         })
     }
 }
+
+const apiKey = process.env.BINANCE_API_KEY?.toString() ?? ''
+const apiSecret = process.env.BINANCE_API_SECKET_KEY?.toString() ?? ''
+const client = new Spot(apiKey, apiSecret)
+client.coinInfo()
+    .then(response => console.log(response.data))
+    .catch(error => console.error(error))
