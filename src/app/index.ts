@@ -1,5 +1,5 @@
-import { Scaner } from "./scaner"
-import { Server } from "./server"
+import { Scaner } from "./Scaner"
+import { Server } from "./Server"
 
 class Application {
     server = new Server()
