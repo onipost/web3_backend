@@ -35,6 +35,7 @@
     "@binance/connector": "^2.0.1",
     "ethers": "^5.7.2",
     "express": "^4.18.1",
+    "rxjs": "^7.8.0",
     "ws": "^8.8.1"
   }
 }
