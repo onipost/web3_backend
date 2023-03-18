@@ -2,7 +2,10 @@ import { Observable } from "rxjs"
 import { BaseToken, Token, TokenCex } from "../entity/Token"
 
 export interface TokenDataSource {
+    
     tokens: Observable<BaseToken[]>
+
+    openConnection()
 }
 
 export interface CexDataSource extends TokenDataSource {

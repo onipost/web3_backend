@@ -1,3 +1,4 @@
+import { BinanceDataSource } from "../../data/src/exchange/binance/BinanceDataSource"
 import { Scaner } from "./Scaner"
 import { Server } from "./Server"
 
@@ -7,6 +8,7 @@ class Application {
 
     constructor() {
         this.server.start()
+        this.scaner.addSource(new BinanceDataSource())
     }
 }
 
