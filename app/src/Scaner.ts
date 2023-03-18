@@ -1,4 +1,4 @@
-import { TokenDataSource } from "../domain/dataSource/TokenDataSource"
+import { TokenDataSource } from "../../domain/src/dataSource/TokenDataSource"
 
 export class Scaner {
 
