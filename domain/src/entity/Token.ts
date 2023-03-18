@@ -1,7 +1,8 @@
+import { Exchange } from "./Exchange"
+
 export interface BaseToken {
     readonly ticker: string,
-    readonly title: string,
-    dailyChange: number
+    readonly title: string
 }
 
 export interface Token extends BaseToken {
@@ -10,5 +11,5 @@ export interface Token extends BaseToken {
 }
 
 export interface TokenCex extends BaseToken {
-    readonly exchangeTitle: string //TODO maybe delete this and aggregate all tokens into Exchange model
+    readonly exchange: Exchange
 }

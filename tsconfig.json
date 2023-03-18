@@ -7,7 +7,7 @@
     ],
     "allowJs": false,
     "outDir": "build",
-    "rootDir": "src",
+    "rootDir": "./",
     "strict": true,
     "sourceMap": true,
     "noImplicitAny": false,
