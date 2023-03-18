@@ -1,6 +1,6 @@
 import { TokenDataSource } from "../../domain/src/dataSource/TokenDataSource"
 
-class Scaner {
+export class Scaner {
 
     sources: TokenDataSource[] = []
 

@@ -1,11 +1,13 @@
-import express from 'express'
+import { Scaner } from "./scaner"
+import { Server } from "./server"
 
-const app = express()
-const { PORT = 8081 } = process.env
+class Application {
+    server = new Server()
+    scaner = new Scaner()
 
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.send({ message: 'hello world' })
-})
-app.listen(PORT, () => {
-    console.log('server started at http://localhost:' + PORT)
-})
+    constructor() {
+        this.server.start()
+    }
+}
+
+new Application()
