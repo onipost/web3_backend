@@ -6,7 +6,6 @@ export class Scaner {
 
     addSource(source: TokenDataSource) {
         this.sources.push(source)
-        source.openConnection()
     }
 
     removeSource(source: TokenDataSource) {
