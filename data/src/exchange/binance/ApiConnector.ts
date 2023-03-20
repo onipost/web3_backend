@@ -1,6 +1,7 @@
 import { Spot } from "@binance/connector"
-import { defer, Observable } from "rxjs"
+import { Observable } from "rxjs"
 import { TokenCex } from "../../../../domain/src/entity/Token"
+import { toColdObservable } from "../../base/toColdObservable"
 import { BinanceTokenMapper } from "./BinanceTokenMapper"
 import { TokenPOJO } from "./entity/TokenPOJO"
 
@@ -19,11 +20,8 @@ export class ApiConnector {
     }
 
     getTokensList(): Observable<TokenCex[]> {
-        return defer(() => this.getTokensListPromise())
-    }
-
-
-    private getTokensListPromise(): Promise<TokenCex[]> {
-        return this.api.coinInfo().then((response: { data: TokenPOJO[] }) => this.tokenMapper.map(response.data))
+        return toColdObservable(
+            this.api.coinInfo().then((response: { data: TokenPOJO[] }) => this.tokenMapper.map(response.data))
+        )
     }
 }
