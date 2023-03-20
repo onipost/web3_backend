@@ -1,5 +1,5 @@
 import { TokenCex } from "../../../../../domain/src/entity/Token"
-import { BaseListMapper } from "../../BaseMapper"
+import { BaseListMapper } from "../../../base/BaseMapper"
 import { TokenPOJO } from "../entity/TokenPOJO"
 
 export class BinanceTokenMapper extends BaseListMapper<TokenPOJO, TokenCex> {

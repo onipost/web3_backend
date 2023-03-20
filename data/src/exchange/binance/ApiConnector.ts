@@ -2,8 +2,8 @@ import { Spot } from "@binance/connector"
 import { Observable } from "rxjs"
 import { TokenCex } from "../../../../domain/src/entity/Token"
 import { toColdObservable } from "../../base/toColdObservable"
-import { BinanceTokenMapper } from "./BinanceTokenMapper"
 import { TokenPOJO } from "./entity/TokenPOJO"
+import { BinanceTokenMapper } from "./mapper/BinanceTokenMapper"
 
 export class ApiConnector {
 
@@ -20,7 +20,7 @@ export class ApiConnector {
     }
 
     getTokensList(): Observable<TokenCex[]> {
-        return toColdObservable(
+        return toColdObservable<TokenCex[]>(
             this.api.coinInfo().then((response: { data: TokenPOJO[] }) => this.tokenMapper.map(response.data))
         )
     }
