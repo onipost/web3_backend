@@ -8,7 +8,9 @@ class Application {
 
     constructor() {
         this.server.start()
-        this.scaner.addSource(new BinanceDataSource())
+        this.scaner.addSource(
+            new BinanceDataSource(process.env.BINANCE_API_KEY?.toString() ?? '', process.env.BINANCE_API_SECKET_KEY?.toString() ?? '')
+        )
     }
 }
 

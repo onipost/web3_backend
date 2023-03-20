@@ -8,11 +8,8 @@ export class BinanceDataSource implements CexDataSource {
     private api: ApiConnector
     tokens: Subject<TokenCex[]> = new Subject()
 
-    constructor() {
-        this.api = new ApiConnector(
-            process.env.BINANCE_API_KEY?.toString() ?? '',
-            process.env.BINANCE_API_SECKET_KEY?.toString() ?? ''
-        )
+    constructor(apiKey: string, apiSecret: string) {
+        this.api = new ApiConnector(apiKey, apiSecret)
         this.api.getTokensList()
             .pipe(repeat({ delay: 3000 }))
             .subscribe({ next: (data) => console.log(data), error: console.error })
