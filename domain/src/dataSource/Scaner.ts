@@ -1,8 +1,8 @@
-import { TokenDataSource } from "../../domain/src/dataSource/TokenDataSource"
+import { TokenDataSource } from "./TokenDataSource"
 
 export class Scaner {
 
-    sources: TokenDataSource[] = []
+    private sources: TokenDataSource[] = []
 
     addSource(source: TokenDataSource) {
         this.sources.push(source)
@@ -12,5 +12,6 @@ export class Scaner {
         const index = this.sources.findIndex(object => { object == source })
         if (index == -1) return
         this.sources.splice(index, 1)
+        
     }
 }

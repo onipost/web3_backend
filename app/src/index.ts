@@ -1,6 +1,6 @@
-import { BinanceDataSource } from "../../data/src/exchange/binance/BinanceDataSource"
-import { Scaner } from "./Scaner"
-import { Server } from "./Server"
+import { BinanceDataSource } from "../../data/src/exchange/binance/dataSource/BinanceDataSource"
+import { Server } from "../../data/src/Server"
+import { Scaner } from "../../domain/src/dataSource/Scaner"
 
 class Application {
     server = new Server()
