@@ -26,7 +26,7 @@ export class BinanceRequestBuilder extends RequestBuilder {
         })
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
     createPostRequest(path: string, params: object | null): Promise<any> {
         throw new Error('Method not implemented.')
     }
