@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs'
-import { TokenCex } from '../../../../../domain/src/entity/Token'
-import { toColdObservable } from '../../../base/toColdObservable'
+import { toColdObservable } from '../../../../../../common/src/toColdObservable'
 import { TokenPOJO } from './entity/TokenPOJO'
 import { BinanceTokenMapper } from '../mapper/BinanceTokenMapper'
 import { BaseCexApi, RequestBuilder } from '../../../base/BaseCexApi'
 import { BinanceRequestBuilder } from './BinanceRequestBuilder'
+import { TokenCex } from '../../../../domain/entity/Token'
 
 export class BinanceApi extends BaseCexApi {
 

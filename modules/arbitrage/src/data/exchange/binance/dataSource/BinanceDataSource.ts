@@ -1,7 +1,7 @@
 import { repeat, Subject } from "rxjs"
-import { TokenCex } from "../../../../../domain/src/entity/Token"
-import { CexDataSource } from "../../../../../domain/src/dataSource/TokenDataSource"
 import { BinanceApi } from "../api/BinanceApi"
+import { TokenCex } from "../../../../domain/entity/Token"
+import { CexDataSource } from "../../../../domain/dataSource/TokenDataSource"
 
 export class BinanceDataSource implements CexDataSource {
 
