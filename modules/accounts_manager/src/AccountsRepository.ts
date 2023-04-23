@@ -4,15 +4,6 @@ import { FullWallet, Wallet } from "./entity/Wallet"
 
 export class AccountsRepository {
 
-    constructor() {
-        this.getList(0, 10).then((value) => {
-            console.log(value)
-        }).catch((error) => {
-            console.log("new error")
-            console.log(error)
-        })
-    }
-
     async add(wallet: FullWallet): Promise<boolean> {
         return this.runOnDB(async (connection) => {
             const res = await connection.query("INSERT INTO accounts.wallets(address, \"privateKey\") VALUES ($1, $2) RETURNING *", [wallet.address, wallet.privateKey])
