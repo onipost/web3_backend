@@ -1,4 +1,4 @@
-import { Network } from "./Network"
+import { Network } from "packages/accounts_manager"
 
 export interface Wallet {
     readonly address: string,

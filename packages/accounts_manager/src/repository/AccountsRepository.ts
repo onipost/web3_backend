@@ -1,6 +1,5 @@
+import { FullWallet, Network, Wallet } from "packages/accounts_manager"
 import { Pool } from "pg"
-import { Network } from "./entity/Network"
-import { FullWallet, Wallet } from "./entity/Wallet"
 
 export class AccountsRepository {
 

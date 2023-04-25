@@ -8,6 +8,7 @@
     "allowJs": false,
     "outDir": "build",
     "rootDir": "./",
+    "baseUrl": "./",
     "strict": true,
     "sourceMap": true,
     "noImplicitAny": false,

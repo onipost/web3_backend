@@ -1,8 +1,8 @@
-import { AccountsManagerFeature } from "../../modules/accounts_manager/src/AccountsManagerFeature"
-import { ModuleFeature } from "../../modules/common/src/ModuleFeature"
+import { AccountsManagerFeature } from "packages/accounts_manager"
+import { ModuleFeature } from "packages/common"
 import { Server } from "./Server"
 
-class Application {
+export class Application {
     modules: ModuleFeature[] = []
     server = new Server()
 
@@ -15,5 +15,3 @@ class Application {
         )*/
     }
 }
-
-new Application()
