@@ -4,5 +4,18 @@
   "description": "accounts_manager",
   "author": "",
   "license": "ISC",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "pnpm build"
+  },
+  "dependencies": {
+    "@web3/common": "workspace:^1.0.0"
+  }
 }

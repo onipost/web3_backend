@@ -1,4 +1,4 @@
 export interface Exchange {
-  readonly title: string;
-  readonly link: string;
+  readonly title: string
+  readonly link: string
 }

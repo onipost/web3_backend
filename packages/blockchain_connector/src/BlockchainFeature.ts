@@ -1,3 +1,3 @@
 export interface BlockchainFeature {
-  getAssets(address: string);
+  getAssets(address: string)
 }
