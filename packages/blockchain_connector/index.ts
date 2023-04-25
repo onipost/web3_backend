@@ -1,1 +1,1 @@
-export { BlockchainFeature } from "./src/BlockchainFeature"
+export { BlockchainFeature } from './src/BlockchainFeature';

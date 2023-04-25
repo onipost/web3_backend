@@ -1,9 +1,8 @@
 {
-    "private": true,
-    "name": "blockchain_connector",
-    "description": "blockchain_connector",
-    "author": "",
-    "license": "ISC",
-    "version": "1.0.0"
-  }
-  
+  "private": true,
+  "name": "@web3/blockchain_connector",
+  "description": "blockchain_connector",
+  "author": "",
+  "license": "ISC",
+  "version": "1.0.0"
+}

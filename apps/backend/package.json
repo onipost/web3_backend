@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "@web3/common",
-  "description": "common",
+  "name": "web3_backend",
+  "description": "accounts_manager",
   "author": "",
   "license": "ISC",
   "version": "1.0.0"

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "accounts_manager",
+  "name": "@web3/accounts_manager",
   "description": "accounts_manager",
   "author": "",
   "license": "ISC",
