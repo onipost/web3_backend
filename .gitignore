@@ -1,5 +1,16 @@
-node_modules
-build
-package-lock.json
-pnpm-lock.json
+# Logs
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# IDE / OS files
+*.sublime-project
+*.sublime-workspace
+.vscode
+.idea
+.DS_Store
 .env
+
+# Build
+build

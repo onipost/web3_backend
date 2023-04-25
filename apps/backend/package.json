@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "web3_backend",
+  "description": "accounts_manager",
+  "author": "",
+  "license": "ISC",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start:watch": "nodemon src/index.ts",
+    "run-node": "nodemon build/index.js",
+    "start": "pnpm build && pnpm run-node"
+  },
+  "dependencies": {
+    "@web3/accounts_manager": "workspace:^1.0.0",
+    "@web3/blockchain_connector": "workspace:^1.0.0",
+    "@web3/common": "workspace:^1.0.0"
+  }
+}
