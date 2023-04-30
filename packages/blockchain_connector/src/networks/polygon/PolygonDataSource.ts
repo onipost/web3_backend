@@ -11,7 +11,7 @@ export class PolygonDataSource extends NetworkDataSource {
     super('https://polygon-mainnet.infura.io/v3/')
   }
 
-  protected async getCustomTokens(): Promise<Token[]> {
+  protected getCustomTokens(): Token[] {
     return [polygonUsdc(), polygonUsdt()]
   }
 }

@@ -26,8 +26,8 @@ export abstract class NetworkDataSource {
     return new Map<Network, WalletToken[]>([[this.network, result]])
   }
 
-  protected async getCustomTokens(): Promise<Token[]> {
-    return Promise.resolve([])
+  protected getCustomTokens(): Token[] {
+    return []
   }
 
   private async getMainTokenBalance(address: string): Promise<number> {
@@ -37,7 +37,7 @@ export abstract class NetworkDataSource {
 
   private async getCustomTokensBalance(address: string): Promise<WalletToken[]> {
     const result: WalletToken[] = []
-    const tokens = await this.getCustomTokens()
+    const tokens = this.getCustomTokens()
     for (let index = 0; index < tokens.length; index++) {
       const token = tokens[index]
       console.log(`${this.network}/${address}: Try fetch count of ${token.title}`)

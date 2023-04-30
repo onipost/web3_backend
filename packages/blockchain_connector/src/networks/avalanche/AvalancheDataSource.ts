@@ -11,7 +11,7 @@ export class AvalancheDataSource extends NetworkDataSource {
     super('https://avalanche-mainnet.infura.io/v3')
   }
 
-  protected async getCustomTokens(): Promise<Token[]> {
+  protected getCustomTokens(): Token[] {
     return [avalancheUsdc(), avalancheUsdt()]
   }
 }

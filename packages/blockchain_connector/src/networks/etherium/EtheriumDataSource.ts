@@ -11,7 +11,7 @@ export class EtheriumDataSource extends NetworkDataSource {
     super('https://mainnet.infura.io/v3/')
   }
 
-  protected async getCustomTokens(): Promise<Token[]> {
+  protected getCustomTokens(): Token[] {
     return [etheriumUsdc(), etheriumUsdt()]
   }
 }
