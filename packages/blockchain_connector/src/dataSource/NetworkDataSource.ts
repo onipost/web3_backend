@@ -3,12 +3,13 @@ import { Network } from '@web3/common'
 import { Token, WalletToken } from '../entity/Token'
 
 export abstract class NetworkDataSource {
+  abstract network: Network
   protected web3: Web3
   protected abstract mainToken: Token
   protected abstract customTokens: Token[]
-  abstract network: Network
 
   constructor(rpcUrl: string) {
+    if (rpcUrl.endsWith('/')) rpcUrl = rpcUrl.substring(0, rpcUrl.length - 1)
     this.web3 = new Web3(new Web3.providers.HttpProvider(`${rpcUrl}/${process.env.INFURA_API_KEY}`))
   }
 
@@ -44,6 +45,7 @@ export abstract class NetworkDataSource {
 
   private async getCustomTokenBalance(address: string, token: Token): Promise<number> {
     const contract = new this.web3.eth.Contract(token.abi, token.contract)
+    console.log(`Try fetch count of ${token.title} for ${address}/${this.network}`)
     const result = await contract.methods.balanceOf(address).call()
     return this.convert(result)
   }

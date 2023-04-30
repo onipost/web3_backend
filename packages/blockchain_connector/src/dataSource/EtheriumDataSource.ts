@@ -1,18 +1,17 @@
 import { Network } from '@web3/common'
-import { NetworkDataSource } from './NetworkDataSource'
 import { Token } from '../entity/Token'
+import { NetworkDataSource } from './NetworkDataSource'
 
 export class EtheriumDataSource extends NetworkDataSource {
+  network: Network = Network.Etherium
   protected mainToken: Token = {
     title: 'ETH',
-    network: this.network,
     contract: '',
     abi: [],
   }
   protected customTokens: Token[] = [
     {
       title: 'USDC',
-      network: this.network,
       contract: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
       abi: [
         {
@@ -407,7 +406,6 @@ export class EtheriumDataSource extends NetworkDataSource {
     },
     {
       title: 'USDT',
-      network: this.network,
       contract: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       abi: [
         {
@@ -801,9 +799,8 @@ export class EtheriumDataSource extends NetworkDataSource {
       ],
     },
   ]
-  network = Network.Etherium
 
   constructor() {
-    super('https://mainnet.infura.io/v3')
+    super('https://mainnet.infura.io/v3/')
   }
 }
