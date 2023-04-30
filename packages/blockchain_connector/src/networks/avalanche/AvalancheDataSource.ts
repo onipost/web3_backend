@@ -12,6 +12,6 @@ export class AvalancheDataSource extends NetworkDataSource {
   }
 
   protected async getCustomTokens(): Promise<Token[]> {
-    return [await avalancheUsdc(), await avalancheUsdt()]
+    return [avalancheUsdc(), avalancheUsdt()]
   }
 }

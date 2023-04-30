@@ -12,6 +12,6 @@ export class EtheriumDataSource extends NetworkDataSource {
   }
 
   protected async getCustomTokens(): Promise<Token[]> {
-    return [await etheriumUsdc(), await etheriumUsdt()]
+    return [etheriumUsdc(), etheriumUsdt()]
   }
 }

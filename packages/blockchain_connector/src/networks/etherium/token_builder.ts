@@ -4,28 +4,23 @@ import usdcAbi from './abi/usdc_abi'
 import usdtAbi from './abi/usdt_abi'
 
 export function etheriumEth(): Token {
-  return {
-    network: Network.Etherium,
-    address: '',
-    title: 'ETH',
-    abi: [],
-  }
+  return createToken('ETH', '')
 }
 
-export async function etheriumUsdc(): Promise<Token> {
-  return {
-    network: Network.Etherium,
-    address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    title: 'USDC',
-    abi: usdcAbi,
-  }
+export function etheriumUsdc(): Token {
+  return createToken('USDC', '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', usdcAbi)
 }
 
-export async function etheriumUsdt(): Promise<Token> {
+export function etheriumUsdt(): Token {
+  return createToken('USDT', '0xdac17f958d2ee523a2206206994597c13d831ec7', usdtAbi)
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function createToken(title: string, address: string, abi: any[] = []): Token {
   return {
     network: Network.Etherium,
-    address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
-    title: 'USDT',
-    abi: usdtAbi,
+    address: address,
+    title: title,
+    abi: abi,
   }
 }
