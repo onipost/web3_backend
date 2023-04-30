@@ -14,5 +14,8 @@
   "scripts": {
     "build": "tsc",
     "postinstall": "pnpm build"
+  },
+  "dependencies": {
+    "@web3/common": "workspace:^1.0.0"
   }
 }

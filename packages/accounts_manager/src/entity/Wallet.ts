@@ -1,4 +1,4 @@
-import { Network } from './Network'
+import { Network } from '@web3/common'
 
 export interface Wallet {
   readonly address: string

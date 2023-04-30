@@ -1,7 +1,7 @@
 import { ModuleFeature } from '@web3/common'
+import { Network } from '@web3/common'
 import { AccountsRepository } from './repository/AccountsRepository'
 import { FullWallet, Wallet } from './entity/Wallet'
-import { Network } from './entity/Network'
 
 export class AccountsManagerFeature implements ModuleFeature {
   private repository: AccountsRepository

@@ -1,6 +1,6 @@
 import { Pool } from 'pg'
+import { Network } from '@web3/common'
 import { FullWallet, Wallet } from '../entity/Wallet'
-import { Network } from '../entity/Network'
 
 export class AccountsRepository {
   async add(wallet: FullWallet): Promise<boolean> {
