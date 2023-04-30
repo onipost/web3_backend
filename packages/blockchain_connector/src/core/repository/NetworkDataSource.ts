@@ -14,7 +14,7 @@ export abstract class NetworkDataSource {
 
   async getTokens(address: string): Promise<Map<Network, WalletToken[]>> {
     const count = await this.getMainTokenBalance(address)
-    this.logCount(address, this.mainToken, count.toString())
+    this.logCount(address, this.mainToken, count)
     const result = [
       {
         count: count,
@@ -31,8 +31,8 @@ export abstract class NetworkDataSource {
   }
 
   private async getMainTokenBalance(address: string): Promise<number> {
-    const result = await this.web3.eth.getBalance(address)
-    return this.convert(result)
+    const balance = await this.web3.eth.getBalance(address)
+    return +this.web3.utils.fromWei(balance, 'ether')
   }
 
   private async getCustomTokensBalance(address: string): Promise<WalletToken[]> {
@@ -42,21 +42,26 @@ export abstract class NetworkDataSource {
       const token = tokens[index]
       console.log(`${this.network}/${address}: Try fetch count of ${token.title}`)
       const contract = new this.web3.eth.Contract(token.abi, token.address)
-      const count = await contract.methods.balanceOf(address).call()
+      const count = await this.getTokenBalance(contract, address)
       this.logCount(address, token, count)
+
       result.push({
-        count: this.convert(count),
+        count: count,
         token: token,
       })
     }
     return result
   }
 
-  private convert(value: string): number {
-    return +this.web3.utils.fromWei(value, 'ether')
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private async getTokenBalance(contract: any, address: string): Promise<number> {
+    const rawCount = await contract.methods.balanceOf(address).call()
+    const decimals = parseInt(await contract.methods.decimals().call())
+    const result = rawCount.slice(0, -decimals) + '.' + rawCount.slice(-decimals)
+    return parseFloat(result)
   }
 
-  private logCount(address: string, token: Token, count: string) {
+  private logCount(address: string, token: Token, count: number) {
     console.log(`${this.network}/${address}: Count of ${token.title} is ${count}`)
   }
 }
