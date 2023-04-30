@@ -8,7 +8,7 @@ export class BlockchainFeature implements ModuleFeature {
   private repository: NetworkRepository
 
   constructor() {
-    //TODO integrate networks: avalanche, polygon, bsc, arbitrum, optimism, fantom
+    //TODO integrate networks: polygon, bsc, arbitrum, optimism, fantom
     this.repository = new NetworkRepository([new EtheriumDataSource(), new AvalancheDataSource()])
 
     this.getAssets('0x6FB820D84A221f837e38e1fDE30D15686666bfca')
