@@ -9,7 +9,7 @@ export class Application {
   server = new Server()
 
   constructor() {
-    dotenv.config()
+    dotenv.config({ path: '../../.env' })
     this.server.start()
     this.modules.push(new AccountsManagerFeature())
     this.modules.push(new BlockchainFeature())

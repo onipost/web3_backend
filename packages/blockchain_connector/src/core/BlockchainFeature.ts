@@ -1,8 +1,8 @@
 import { ModuleFeature } from '@web3/common'
 import { WalletBalance } from './entity/WalletBalance'
 import { NetworkRepository } from './repository/BlockchainRepository'
-import { EtheriumDataSource } from './dataSource/EtheriumDataSource'
-import { AvalancheDataSource } from './dataSource/AvalancheDataSource'
+import { EtheriumDataSource } from '../networks/etherium/EtheriumDataSource'
+import { AvalancheDataSource } from '../networks/avalanche/AvalancheDataSource'
 
 export class BlockchainFeature implements ModuleFeature {
   private repository: NetworkRepository
@@ -18,7 +18,7 @@ export class BlockchainFeature implements ModuleFeature {
           console.log(`balance in ${key}, ${value}`)
         })
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error.message))
   }
 
   async getAssets(address: string): Promise<WalletBalance> {

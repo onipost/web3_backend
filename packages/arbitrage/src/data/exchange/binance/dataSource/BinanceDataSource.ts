@@ -15,10 +15,7 @@ export class BinanceDataSource implements CexDataSource {
       .pipe(repeat({ delay: 3000 }))
       .subscribe({
         next: (data) => console.log(data),
-        error: (error) => {
-          console.error(error)
-          console.log('fuck')
-        },
+        error: (error) => console.error(error),
       })
   }
 }

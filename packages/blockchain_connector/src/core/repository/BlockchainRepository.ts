@@ -1,4 +1,4 @@
-import { NetworkDataSource } from '../dataSource/NetworkDataSource'
+import { NetworkDataSource } from './NetworkDataSource'
 import { WalletBalance } from '../entity/WalletBalance'
 
 export class NetworkRepository {
@@ -15,7 +15,8 @@ export class NetworkRepository {
 
     for (let index = 0; index < this.dataSources.length; index++) {
       const source = this.dataSources[index]
-      result.balance[source.network] = await source.getAssets(address)
+      const tokens = await source.getTokens(address)
+      result.balance = new Map([...Array.from(tokens.entries())])
     }
 
     return result
