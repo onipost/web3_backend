@@ -7,5 +7,6 @@ export enum Network {
   BSC = 'BSC',
   Avalanche = 'Avalanche',
   Aptos = 'Aptos',
+  Fantom = 'Fantom',
   Polygon = 'Polygon',
 }
