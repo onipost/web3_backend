@@ -8,7 +8,7 @@ export class EtheriumDataSource extends NetworkDataSource {
   protected mainToken = etheriumEth()
 
   constructor() {
-    super('https://mainnet.infura.io/v3/')
+    super(`https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`)
   }
 
   protected getCustomTokens(): Token[] {

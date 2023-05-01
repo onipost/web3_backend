@@ -8,7 +8,7 @@ export class PolygonDataSource extends NetworkDataSource {
   protected mainToken = polygonMatic()
 
   constructor() {
-    super('https://polygon-mainnet.infura.io/v3/')
+    super(`https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`)
   }
 
   protected getCustomTokens(): Token[] {

@@ -8,8 +8,7 @@ export abstract class NetworkDataSource {
   protected abstract mainToken: Token
 
   constructor(rpcUrl: string) {
-    if (rpcUrl.endsWith('/')) rpcUrl = rpcUrl.substring(0, rpcUrl.length - 1)
-    this.web3 = new Web3(new Web3.providers.HttpProvider(`${rpcUrl}/${process.env.INFURA_API_KEY}`))
+    this.web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl))
   }
 
   async getTokens(address: string): Promise<Map<Network, WalletToken[]>> {
