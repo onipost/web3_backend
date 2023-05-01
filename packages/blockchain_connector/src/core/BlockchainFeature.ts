@@ -6,6 +6,7 @@ import { AvalancheDataSource } from '../networks/avalanche/AvalancheDataSource'
 import { PolygonDataSource } from '../networks/polygon/PolygonDataSource'
 import { ArbitrumDataSource } from '../networks/arbitrum/ArbitrumDataSource'
 import { OptimismDataSource } from '../networks/optimism/OptimismDataSource'
+import { BscDataSource } from '../networks/bsc/BscDataSource'
 
 export class BlockchainFeature implements ModuleFeature {
   private repository: NetworkRepository
@@ -18,6 +19,7 @@ export class BlockchainFeature implements ModuleFeature {
       new PolygonDataSource(),
       new ArbitrumDataSource(),
       new OptimismDataSource(),
+      new BscDataSource(),
     ])
 
     this.getAssets('0x6FB820D84A221f837e38e1fDE30D15686666bfca')
