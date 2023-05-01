@@ -39,7 +39,6 @@ export abstract class NetworkDataSource {
     const tokens = this.getCustomTokens()
     for (let index = 0; index < tokens.length; index++) {
       const token = tokens[index]
-      console.log(`${this.network}/${address}: Try fetch count of ${token.title}`)
       const contract = new this.web3.eth.Contract(token.abi, token.address)
       const count = await this.getTokenBalance(contract, address)
       this.logCount(address, token, count)
