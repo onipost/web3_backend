@@ -5,17 +5,19 @@ import { EtheriumDataSource } from '../networks/etherium/EtheriumDataSource'
 import { AvalancheDataSource } from '../networks/avalanche/AvalancheDataSource'
 import { PolygonDataSource } from '../networks/polygon/PolygonDataSource'
 import { ArbitrumDataSource } from '../networks/arbitrum/ArbitrumDataSource'
+import { OptimismDataSource } from '../networks/optimism/OptimismDataSource'
 
 export class BlockchainFeature implements ModuleFeature {
   private repository: NetworkRepository
 
   constructor() {
-    //TODO integrate networks: bsc, arbitrum, optimism, fantom
+    //TODO integrate networks: bsc, fantom
     this.repository = new NetworkRepository([
       new EtheriumDataSource(),
       new AvalancheDataSource(),
       new PolygonDataSource(),
       new ArbitrumDataSource(),
+      new OptimismDataSource(),
     ])
 
     this.getAssets('0x6FB820D84A221f837e38e1fDE30D15686666bfca')
