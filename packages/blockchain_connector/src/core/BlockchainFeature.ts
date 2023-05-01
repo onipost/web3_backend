@@ -22,15 +22,6 @@ export class BlockchainFeature implements ModuleFeature {
       new BscDataSource(),
       new FantomDataSource(),
     ])
-
-    this.getAssets('0x6FB820D84A221f837e38e1fDE30D15686666bfca')
-      .then((balance) => {
-        console.log(balance.balance)
-        balance.balance.forEach((value, key, map) => {
-          console.log(`balance in ${key}, ${value}`)
-        })
-      })
-      .catch((error) => console.log(error.message))
   }
 
   async getAssets(address: string): Promise<WalletBalance> {
