@@ -8,7 +8,7 @@ export class AvalancheDataSource extends NetworkDataSource {
   protected mainToken = avalancheAvax()
 
   constructor() {
-    super('https://avalanche-mainnet.infura.io/v3')
+    super('https://avalanche-mainnet.infura.io/v3/')
   }
 
   protected getCustomTokens(): Token[] {
